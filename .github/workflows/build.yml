@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-java@main
         with:
           java-version: 17
-          distribution: temurin
+          distribution: adopt
 
       - name: Build LimboAuth
         run: ./gradlew build
@@ -26,5 +26,5 @@ jobs:
           title: "LimboAuth"
           automatic_release_tag: "la"
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          files: "*/build/libs/*.jar"
+          files: "build/libs/limboauth*.jar"
           prerelease: false
